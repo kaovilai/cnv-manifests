@@ -3,13 +3,13 @@ kind: VirtualMachine
 metadata:
   creationTimestamp: null
   labels:
-    kubevirt.io/vm: vm-rhel9-datavolume
-  name: vm-rhel9-datavolume
+    kubevirt.io/vm: vm-centos9-datavolume
+  name: vm-centos9-datavolume
 spec:
   dataVolumeTemplates:
   - metadata:
       creationTimestamp: null
-      name: rhel9-dv
+      name: centos9-dv
     spec:
       pvc:
         accessModes:
@@ -28,7 +28,7 @@ spec:
     metadata:
       creationTimestamp: null
       labels:
-        kubevirt.io/vm: vm-rhel9-datavolume
+        kubevirt.io/vm: vm-centos9-datavolume
     spec:
       domain:
         devices:
@@ -44,6 +44,6 @@ spec:
       terminationGracePeriodSeconds: 180
       volumes:
       - dataVolume:
-          name: rhel9-dv
+          name: centos9-dv
         name: datavolumedisk1
 status: {}
