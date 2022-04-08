@@ -36,6 +36,9 @@ spec:
           - disk:
               bus: virtio
             name: datavolumedisk1
+          - disk:
+              bus: virtio
+            name: cloudinitdisk
         machine:
           type: "" 
         resources:
@@ -46,4 +49,12 @@ spec:
       - dataVolume:
           name: centos9-dv
         name: datavolumedisk1
+      - cloudInitNoCloud:
+          userData: |
+            #cloud-config
+            user: cloud-user
+            password: pass
+            chpasswd:
+              expire: false
+        name: cloudinitdisk
 status: {}
