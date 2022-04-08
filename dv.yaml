@@ -1,0 +1,9 @@
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  name: rhel-guest-dv
+  namespace: tiger-adp
+spec:
+  source:
+    registry:
+      url: registry.redhat.io/rhel8/rhel-guest-image
